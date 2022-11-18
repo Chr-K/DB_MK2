@@ -1,0 +1,12 @@
+html {
+    background-color: rgb(3, 0, 47);
+    color:white;
+}
+
+.container_main{
+display:flex;
+justify-content: center;
+}
+.login_sign{
+    font-size:xx-large;
+}
