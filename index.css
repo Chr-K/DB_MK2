@@ -6,7 +6,29 @@ html {
 .container_main{
 display:flex;
 justify-content: center;
+text-align: center;
+
 }
+
 .login_sign{
     font-size:xx-large;
+}
+.signup_sign{
+    font-size:xx-large;
+}
+
+input {
+    height:2rem;
+    width: 10rem;
+
+}
+
+table{
+    border-collapse: collapse;
+}
+
+.main_btn_class{
+    width: 5rem;
+    height:2.5rem;
+    background-color: aqua;
 }

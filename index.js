@@ -42,14 +42,19 @@ function signup_table()
         'Password',
         'Password_confirm',
     ]
+
     if (document.getElementById('signup_table') === null)
     {
         var signup_table = document.createElement('table')
         signup_table.id = 'signup_table'
+        signup_table.className = 'signup_table'
+        var signup_table_container = document.createElement('div')
+        signup_table_container.id = 'signup_table_container'
         var signup_sign = document.createElement('div')
         signup_sign.innerHTML = 'Sign Up'
-        signup_table.append(signup_sign)
-        document.getElementById('container_main').append(signup_table)
+        signup_sign.className = 'signup_sign'
+        signup_table_container.append(signup_sign,signup_table)
+        document.getElementById('container_main').append(signup_table_container)
         fill_table(signup_table.id,signup_inputs,2)
         document.removeEventListener('mouseup',input_listeners,true)
         document.removeEventListener('keyup',input_listeners,true) 
@@ -59,10 +64,8 @@ function signup_table()
         document.addEventListener('keyup',input_listeners,true)
         document.getElementById('login_table_container').remove()
     }
-    else (alert('error'))
 }
 function fill_table(table_id,input_array,cells_per_row){
-    var rows = input_array.length/cells_per_row
     var table = document.getElementById(table_id);
     var row_iterator = 0
     for (var i = 0;i < input_array.length;i++)
@@ -88,11 +91,15 @@ function fill_table(table_id,input_array,cells_per_row){
         }
     }
         var signup_submit_button = document.createElement('button')
-            signup_submit_button.innerHTML = 'submit'
+            signup_submit_button.innerHTML = 'Submit'
             signup_submit_button.id = 'signup_submit_button'
+            signup_submit_button.className = 'main_btn_class'
         var signup_form_exit_button = document.createElement('button')
-            signup_form_exit_button.innerHTML = 'exit'
+            signup_form_exit_button.innerHTML = 'Exit'
             signup_form_exit_button.id = 'signup_form_exit_button'
+            signup_form_exit_button.className = 'main_btn_class'
 
-        document.getElementById(table_id).append(signup_form_exit_button,signup_submit_button)
+
+            document.getElementById('signup_table_container').append(signup_form_exit_button, signup_submit_button)
+
 }
